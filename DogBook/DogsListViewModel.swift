@@ -1,5 +1,5 @@
 //
-//  ViewModel.swift
+//  DogsListViewModel.swift
 //  DogBook
 //
 //  Created by Ingrid K Chiles on 5/4/24.
@@ -7,10 +7,11 @@
 
 import Foundation
 
-class DogsViewModel: ObservableObject {
+class DogsListViewModel: ObservableObject {
     
     private let service = DogsService()
     @Published var dogs: [Dog] = []
+
 
     func loadData() async {
         do {
@@ -19,7 +20,6 @@ class DogsViewModel: ObservableObject {
 
             for breed in breeds {
                 let imageURL = try await service.getImage(referenceImageId: breed.reference_image_id)
-
                 let dog = Dog(id: breed.id,
                               weight: breed.weight.imperial,
                               height: breed.height.imperial,
