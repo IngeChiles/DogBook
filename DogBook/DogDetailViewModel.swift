@@ -11,7 +11,6 @@ class DogDetailViewModel: ObservableObject {
     @Published var bredFor: String
     @Published var breedGroup: String
     @Published var temperament: String
-    @Published var origin: String
     @Published var image: URL?
     
     private let dog: Dog
@@ -22,10 +21,9 @@ class DogDetailViewModel: ObservableObject {
         self.weight = self.dog.weight
         self.height = self.dog.height
         self.name = self.dog.name
-        self.bredFor = self.dog.bredFor
-        self.breedGroup = self.dog.breedGroup
-        self.temperament = self.dog.temperament
-        self.origin = self.dog.origin
+        self.bredFor = self.dog.bredFor ?? "unknown"
+        self.breedGroup = self.dog.breedGroup ?? "unknown"
+        self.temperament = self.dog.temperament ?? "unknown"
         self.image = self.dog.image
         
     }

@@ -17,7 +17,6 @@ struct Breed: Codable {
     let bred_for: String?
     let breed_group: String?
     let temperament: String?
-    let origin: String?
     let reference_image_id: String
 }
 
@@ -40,9 +39,8 @@ struct Dog: Identifiable {
     let weight: String
     let height: String
     let name: String
-    let bredFor: String
-    let breedGroup: String
-    let temperament: String
-    let origin: String
+    let bredFor: String?
+    let breedGroup: String?
+    let temperament: String?
     let image: URL?
 }

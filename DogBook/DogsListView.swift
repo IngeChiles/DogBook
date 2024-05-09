@@ -42,41 +42,17 @@ struct DogsListView: View {
                                         .frame(width: 160, height: 50)
                                         .padding(.top, 160)
                                         .font(.system(size: 16))
+                                        .foregroundStyle(Color.black)
                                 }
-
-//                                ZStack {
-//                                    AsyncImage(url: dog.image) { image in
-//                                        image.image?
-//                                            .resizable()
-//                                            .scaledToFill()
-//                                    }
-//                                    .frame(width: 170, height: 170)
-//                                    .background(.black)
-//                                    .clipShape(.rect(cornerRadius: 10))
-//                                    
-//                                    Image("polaroid-frame")
-//                                        .resizable()
-//                                        .scaledToFit()
-//                                        .foregroundStyle(Color("polaroid-frame-colors"))
-//                                    
-//                                    Spacer()
-//                                    
-//                                    Text(dog.name)
-//                                        .frame(width: 170, height: 170)
-//                                        .offset(y: 58)
-//                                        .font(.system(size: 16))
-//                                        .foregroundStyle(Color.black)
-//                                }
                             }
                             .padding(.top, 10)
                         }
                     }
                 }
             }
-            .scrollContentBackground(.hidden)
-            .frame(maxWidth: .infinity)
-            .background(Color.green)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding()
+            .background(Color.green.edgesIgnoringSafeArea(.all))
             .navigationTitle("DogBook")
         }
         .task {
