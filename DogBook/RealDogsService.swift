@@ -6,14 +6,19 @@
 //
 
 import Foundation
+
+protocol DogsService: AnyObject {
+    func getBreeds() async throws -> [Breed]
+    func getImage(referenceImageId: String) async throws -> URL?
+}
+
 enum URLError: Error {
     case invalidURL
     case networkError
 }
 
-class DogsService {
+class RealDogsService: DogsService {
     private let session = URLSession.shared
-    
     
     func getBreeds() async throws -> [Breed] {
         guard let url = URL(string: "https://api.thedogapi.com/v1/breeds") else {

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DogsListView: View {
     
-    @StateObject var vm = DogsListViewModel()
+    @StateObject var vm = DogsListViewModel(service: RealDogsService())
     
     let columns = Array(repeating: GridItem(.flexible()), count: 2)
     

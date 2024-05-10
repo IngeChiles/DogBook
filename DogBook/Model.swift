@@ -34,7 +34,7 @@ struct ImageURL: Codable {
 }
 
 // MARK: - APP MODELS
-struct Dog: Identifiable {
+struct Dog: Identifiable, Equatable {
     let id: Int
     let weight: String
     let height: String

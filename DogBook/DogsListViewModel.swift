@@ -9,9 +9,13 @@ import Foundation
 
 class DogsListViewModel: ObservableObject {
     
-    private let service = DogsService()
+    private let service: DogsService
+    
     @Published var dogs: [Dog] = []
     
+    init(service: DogsService) {
+        self.service = service
+    }
     
     func loadData() async {
         do {
