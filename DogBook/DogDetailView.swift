@@ -63,7 +63,7 @@ struct DogDetailView: View {
             }
             .frame(maxWidth: .infinity)
         }
-        .background(Color.green)
+        .background(Color.background)
     }
 }
 

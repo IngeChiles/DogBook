@@ -52,7 +52,7 @@ struct DogsListView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding()
-            .background(Color.green.edgesIgnoringSafeArea(.all))
+            .background(Color.background.edgesIgnoringSafeArea(.all))
             .navigationTitle("DogBook")
         }
         .task {

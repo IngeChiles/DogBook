@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol DogsService: AnyObject {
+protocol DogsService {
     func getBreeds() async throws -> [Breed]
     func getImage(referenceImageId: String) async throws -> URL?
 }
