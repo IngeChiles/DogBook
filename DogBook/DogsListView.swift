@@ -22,30 +22,32 @@ struct DogsListView: View {
                         NavigationLink {
                             DogDetailView(ddvm: DogDetailViewModel(dog: dog))
                         } label: {
-                            VStack {
+                            ZStack(alignment: .bottom) {
                                 ZStack(alignment: .top) {
-                                    AsyncImage(url: dog.image) { image in
-                                        image.image?
-                                            .resizable()
-                                            .scaledToFill()
-                                            .frame(width: 160, height: 160)
-                                            .padding(.top, 5)
-                                            .clipShape(.rect(cornerRadius: 10))
-                                    }
+                                    Rectangle()
+                                        .aspectRatio(1, contentMode: .fit)
+                                        .overlay(
+                                            AsyncImage(url: dog.image) { image in
+                                                image.image?
+                                                    .resizable()
+                                                    .scaledToFill()
+                                            })
+                                        .clipShape(Rectangle())
+                                        .padding(5)
                                     
                                     Image("polaroid-frame")
                                         .resizable()
                                         .scaledToFill()
-                                        .frame(width: 165)
-                                    
-                                    Text("\(dog.name)")
-                                        .frame(width: 160, height: 50)
-                                        .padding(.top, 160)
-                                        .font(.system(size: 16))
-                                        .foregroundStyle(Color.black)
                                 }
+                                
+                                Text("\(dog.name)")
+                                    .frame(minHeight: 40)
+                                    .padding(.bottom, 10)
+                                    .padding(.horizontal, 10)
+                                    .font(.callout)
+                                    .foregroundStyle(Color.black)
                             }
-                            .padding(.top, 10)
+                            .padding(5)
                         }
                     }
                 }
